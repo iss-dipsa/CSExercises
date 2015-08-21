@@ -25,8 +25,8 @@ namespace ExercisesTest
             Random r = new Random();
             t.SetupConsole(new string[] { "2000", "120" });
             TestHelper.RunMain(typeof(Ex22));
-            t.AssertOutputContains(2, "80", true);
-            t.AssertOutputContains(1, "3000", false);
+            t.AssertOutputContains(2, "40", true);
+            t.AssertOutputContains(1, "6000", false);
         }
 
     }

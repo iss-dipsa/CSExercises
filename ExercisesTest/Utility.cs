@@ -60,6 +60,22 @@ namespace ExercisesTest
         {
             WriteLine("");
         }
+
+        public void RemoveEmptyEntries()
+        {
+            int i = 0;
+            while (i < Entries.Count)
+            {
+                if (String.IsNullOrWhiteSpace(Entries[i]))
+                {
+                    Entries.RemoveAt(i);
+                }
+                else
+                {
+                    i++;
+                }
+            }
+        }
     }
 
     public class FakeStringReader : StringReader

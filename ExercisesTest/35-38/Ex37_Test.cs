@@ -6,11 +6,6 @@ namespace ExercisesTest
     [TestClass]
     public class Ex37_Test
     {
-        [TestMethod]
-        public void Ex37_TestWithEmptyString()
-        {
-            TestHelper.TestOutputEqual(typeof(Ex37),"\r\n","");
-        }
 
         [TestMethod]
         public void Ex37_TestWithOneWord()

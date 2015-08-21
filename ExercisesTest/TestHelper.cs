@@ -43,6 +43,7 @@ namespace ExercisesTest
         public void AssertOutput(string expectedOutput)
         {
             Debug.WriteLine(l.Log);
+            tw.RemoveEmptyEntries();
             Assert.IsTrue(tw.Entries.Count>0,"There is no output detected");
             Assert.AreEqual(expectedOutput.Trim().ToLower(), tw.Entries[tw.Entries.Count - 1].Trim().ToLower(),"Program output is different from the expected output.");
         }
@@ -50,12 +51,14 @@ namespace ExercisesTest
         public void AssertOutputContains(string expectedOutput)
         {
             Debug.WriteLine(l.Log);
+            tw.RemoveEmptyEntries();
             Assert.IsTrue(tw.Entries.Count > 0, "There is no output detected");
             Assert.IsTrue(tw.Entries[tw.Entries.Count - 1].Trim().ToLower().Contains(expectedOutput.Trim().ToLower()), "Program output do not contain the expected output ("+expectedOutput+").");
         }
 
         public void AssertOutputContains(int positionFromBack, string expectedOutput, bool log)
         {
+            tw.RemoveEmptyEntries();
             if (log)
             {
                 Debug.WriteLine(l.Log);
@@ -66,6 +69,7 @@ namespace ExercisesTest
 
         public int CountOutputContaining(string output)
         {
+            tw.RemoveEmptyEntries();
             int count = 0;
             for (int i = 0; i < tw.Entries.Count; i++)
             {
@@ -78,6 +82,7 @@ namespace ExercisesTest
         public void AssertOutputNotContaining(string expectedOutput)
         {
             Debug.WriteLine(l.Log);
+            tw.RemoveEmptyEntries();
             Assert.IsTrue(tw.Entries.Count > 0, "There is no output detected");
             Assert.IsFalse(tw.Entries[tw.Entries.Count - 1].Trim().ToLower().Contains(expectedOutput.Trim().ToLower()), "Program output should not contain the the string " + expectedOutput + ".");
         }
